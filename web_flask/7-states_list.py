@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+FLask app to render states
+"""
 from flask import Flask, render_template
 from models import storage
 app = Flask(__name__)
