@@ -13,7 +13,7 @@ def shutdown_session(exception=None):
     """
     storage.close()
 
-@app.route('/cities_by_states')
+@app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
     states = storage.all("State")
     sorted_states = sorted(states.values(), key=lambda x: x.name)
