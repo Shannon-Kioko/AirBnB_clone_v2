@@ -7,11 +7,13 @@ from models import storage
 
 app = Flask(__name__)
 
+
 @app.teardown_appcontext
 def shutdown_session(exception=None):
     """reload storage after each request
     """
     storage.close()
+
 
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
